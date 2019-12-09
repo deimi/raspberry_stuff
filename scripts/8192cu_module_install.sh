@@ -10,7 +10,8 @@ echo "blacklist rtl8192cu" > /etc/modprobe.d/blacklist-rtl8192cu.conf
 
 echo 8192cu > /etc/modules
 
-# echo "modprobe 8192cu"
-echo 'echo "050d 11f2" > /sys/bus/usb/drivers/rtl8192cu/new_id' > /etc/rc.local
+cp isy_wifi_adapter.service /etc/systemd/system/
+systemctl enable isy_wifi_adapter
+systemctl start isy_wifi_adapter
 
 exit
